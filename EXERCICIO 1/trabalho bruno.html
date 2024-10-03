@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Lista</title>
+    <script>
+        function gerarLista() {
+            var numero = parseInt(document.getElementById("numero").value);
+            var lista = document.getElementById("lista");
+            lista.innerHTML ="";
+
+            if (isNaN(numero) || numero <= 0) {
+                lista.innerHTML = "Digite um número válido.";
+                return;
+            }
+
+            for (var i = 1; i <= numero; i++) {
+                var li = document.createElement("li");
+                li.textContent = "Bruno Gabriel " + i;
+                lista.appendChild(li);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Gerador de Lista</h1>
+    <input type="number" id="numero" placeholder="Digite um número" min="1">
+    <button onclick="gerarLista()">Gerar Lista</button>
+    <ul id="lista"></ul>
+</body>
+</html>
